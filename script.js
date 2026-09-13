@@ -13,7 +13,7 @@ let weeklyGoalMinutes = 0;
 /* ---------- starfield ---------- */
 function initStars(){
   const starsEl = document.getElementById('stars');
-  const STAR_COUNT = 140;
+  const STAR_COUNT = 420;
   for (let i = 0; i < STAR_COUNT; i++) {
     const s = document.createElement('div');
     const size = Math.random() * 1.8 + 0.4;
