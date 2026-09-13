@@ -68,7 +68,7 @@ html,body{
     0 0 24px rgba(79,201,236,0.35),
     0 0 60px rgba(30,150,190,0.15) inset;
   backdrop-filter: blur(2px);
-  animation: panelEnter 0.7s cubic-bezier(0.16,1,0.3,1) both, pulseGlow 4.5s ease-in-out 0.8s infinite;
+  animation: pulseGlow 4.5s ease-in-out infinite;
   display:flex;
   flex-direction:column;
   overflow:hidden;
@@ -79,27 +79,32 @@ html,body{
   50%{ box-shadow:0 0 0 1px rgba(79,201,236,0.15), 0 0 38px rgba(79,201,236,0.55), 0 0 80px rgba(30,150,190,0.22) inset; }
 }
 
-@keyframes panelEnter{
-  from{ opacity:0; transform:translateY(70px); }
-  to{ opacity:1; transform:translateY(0); }
+/* ---- 下からスライドインする入場アニメーション ---- */
+/* JS が読み込み直後に <body> へ .loaded を付与し、その瞬間に
+   .enter-hidden 要素が transform / opacity で下からふわっと現れる */
+.enter-hidden{
+  opacity:0;
+  transform:translateY(50px);
+  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  will-change:transform, opacity;
+}
+body.loaded .enter-hidden{
+  opacity:1;
+  transform:translateY(0);
 }
 
-@keyframes enterUp{
-  from{ opacity:0; transform:translateY(26px); }
-  to{ opacity:1; transform:translateY(0); }
-}
+.panel.enter-hidden{ transform:translateY(90px); transition-delay:0s; }
+.title-row.enter-hidden{ transition-delay:0.1s; }
+.mode-tabs.enter-hidden{ transition-delay:0.2s; }
+.toolbar.enter-hidden{ transition-delay:0.75s; }
 
-.title-row{ animation: enterUp 0.6s ease-out 0.15s both; }
-.mode-tabs{ animation: enterUp 0.6s ease-out 0.25s both; }
-.view.active .row{ animation: enterUp 0.5s ease-out both; }
-.view.active .row:nth-child(1){ animation-delay:0.35s; }
-.view.active .row:nth-child(2){ animation-delay:0.42s; }
-.view.active .row:nth-child(3){ animation-delay:0.49s; }
-.view.active .row:nth-child(4){ animation-delay:0.56s; }
-.view.active .row:nth-child(5){ animation-delay:0.63s; }
-.view.active .row:nth-child(6){ animation-delay:0.70s; }
-.view.active .row:nth-child(7){ animation-delay:0.77s; }
-.toolbar{ animation: enterUp 0.6s ease-out 0.85s both; }
+.table .row.enter-hidden:nth-child(1){ transition-delay:0.3s; }
+.table .row.enter-hidden:nth-child(2){ transition-delay:0.37s; }
+.table .row.enter-hidden:nth-child(3){ transition-delay:0.44s; }
+.table .row.enter-hidden:nth-child(4){ transition-delay:0.51s; }
+.table .row.enter-hidden:nth-child(5){ transition-delay:0.58s; }
+.table .row.enter-hidden:nth-child(6){ transition-delay:0.65s; }
+.table .row.enter-hidden:nth-child(7){ transition-delay:0.72s; }
 
 .title-row{
   display:flex;

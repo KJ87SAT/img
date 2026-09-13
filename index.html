@@ -16,12 +16,12 @@
     <path d="M -80 700 Q 500 900, 1000 780 T 1700 830" stroke="#8fe9ff" stroke-width="1" fill="none" stroke-dasharray="2 6" opacity="0.6"/>
   </svg>
 
-  <div class="panel">
-    <div class="title-row">
+  <div class="panel enter-hidden">
+    <div class="title-row enter-hidden">
       <h1 class="title">学習成果報告</h1>
     </div>
 
-    <div class="mode-tabs">
+    <div class="mode-tabs enter-hidden">
       <button class="mode-tab active" data-view="viewForm">記入</button>
       <button class="mode-tab" data-view="viewRecords">記録一覧</button>
       <button class="mode-tab" data-view="viewStats">統計</button>
@@ -32,32 +32,32 @@
       <!-- ===== 記入ビュー ===== -->
       <div class="view active" id="viewForm">
         <div class="table">
-          <div class="row">
+          <div class="row enter-hidden">
             <div class="label">学習期間</div>
             <div class="divider"></div>
             <div class="content" id="fieldPeriod" contenteditable data-placeholder="学習期間を入力"></div>
           </div>
-          <div class="row">
+          <div class="row enter-hidden">
             <div class="label">学習内容</div>
             <div class="divider"></div>
             <div class="content" id="fieldContent" contenteditable data-placeholder="何を勉強したか"></div>
           </div>
-          <div class="row">
+          <div class="row enter-hidden">
             <div class="label">目的</div>
             <div class="divider"></div>
             <div class="content" id="fieldPurpose" contenteditable data-placeholder="何のために取り組んだか"></div>
           </div>
-          <div class="row">
+          <div class="row enter-hidden">
             <div class="label">学習環境</div>
             <div class="divider"></div>
             <div class="content" id="fieldEnvironment" contenteditable data-placeholder="場所・使った教材・集中度など"></div>
           </div>
-          <div class="row">
+          <div class="row enter-hidden">
             <div class="label">実施要領</div>
             <div class="divider"></div>
             <div class="content" id="fieldMethod" contenteditable data-placeholder="やり方・時間配分・次回への課題"></div>
           </div>
-          <div class="row minutes-row">
+          <div class="row minutes-row enter-hidden">
             <div class="label">学習時間</div>
             <div class="divider"></div>
             <div class="content">
@@ -65,7 +65,7 @@
               <span class="minutes-unit">分</span>
             </div>
           </div>
-          <div class="row">
+          <div class="row enter-hidden">
             <div class="label">タグ</div>
             <div class="divider"></div>
             <div class="content">
@@ -115,7 +115,7 @@
 
     </div>
 
-    <div class="toolbar">
+    <div class="toolbar enter-hidden">
       <button class="tool-btn" id="dashboardBtn">＋&nbsp;&#9776; ダッシュボード</button>
 
       <div class="dashboard-panel" id="dashboardPanel">

@@ -393,8 +393,21 @@ function initSpeech(){
   });
 }
 
+/* ---------- 入場アニメーション ---------- */
+function initEntrance(){
+  // 1フレーム待ってから .loaded を付与することで、
+  // ブラウザが初期状態（下にずれた状態）を確実に描画してから
+  // トランジションを発火させる
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.add('loaded');
+    });
+  });
+}
+
 /* ---------- init ---------- */
 window.addEventListener('DOMContentLoaded', async () => {
+  initEntrance();
   initStars();
   initModeTabs();
   initDashboard();
